@@ -1,8 +1,13 @@
 <div>
   <input type="text" [(ngModel)]="submitValue" />
-  <input type="button" (click)="submit()" />
+  <input type="button" (click)="submit()" value="Submit" />
 
-  <input type="button" (click)="DisplayMessage()" name="DisplayMessage" />
+  <input
+    type="button"
+    (click)="DisplayMessage()"
+    value="Display"
+    name="DisplayMessage"
+  />
 </div>
 <div>
   Display data {{showValue}}

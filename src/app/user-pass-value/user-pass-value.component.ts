@@ -9,15 +9,18 @@ import { AdminServiceService } from "../Services/admin-service.service";
 export class UserPassValueComponent implements OnInit {
   submitValue = "";
   showValue = "";
-  constructor(private useService: AdminServiceService) {}
+  constructor(private adminService: AdminServiceService) {}
 
   ngOnInit() {}
 
-  submit() {}
+  submit() {
+    this.adminService.changeMessage(this.submitValue);
+  }
   DisplayMessage() {
-    this.useService.currentStore.subscribe(data => {
+    this.adminService.currentStore.subscribe(data => {
       this.showValue = data;
       console.log("return Value " + data);
     });
+    this.adminService.currentStore.subscribe(console.log);
   }
 }
